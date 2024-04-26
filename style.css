@@ -2,20 +2,20 @@
 
 :root {
     --cor-de-fundo: #1E1E1E;
-    --azul: #0000FF;
-    --branco: #FFFFFF;
+    --azul: #001aff;
+    --cinza: #b1b1b1;
 }
 
 body {
     background-color: var(--cor-de-fundo);
-    color: var(--branco);
+    color: var(--cinza);
     font-family: 'Chakra Petch', sans-serif;
     text-align: center;
 }
 h1 span{
-    color: var(--verde);
+    color: var(--azul);
 }
 #dias_restantes {
-    color: var(--verde);
-    font-size: 50px;
+    color: var(--azul);
+    font-size: 100px;
 }
