@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+}
+h1 span{
+    color: var(--verde);
+}
+#dias_restantes {
+    color: var(--verde);
+    font-size: 50px;
+}
