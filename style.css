@@ -1,3 +1,7 @@
+css
+Edit
+Full Screen
+Copy code
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +11,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -27,15 +32,17 @@ h1 {
 .card {
     display: flex;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #fff;
     margin: 20px 0;
     padding: 20px;
     box-shadow: 1px 1px 2px #ccc;
+    border-radius: 10px;
 }
 
 .card h2 {
     flex: 1;
     font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .progress {
@@ -69,4 +76,47 @@ h1 {
 .info span:first-child {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.card:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.card:last-child {
+    margin-bottom: 40px;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.card .progress {
+    margin-top: 10px;
+}
+
+.card .info {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card h2 {
+        text-align: center;
+    }
+
+    .card img {
+        margin-bottom: 20px;
+    }
+
+    .card .info {
+        margin-top: 20px;
+    }
 }
