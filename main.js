@@ -1,27 +1,87 @@
-const cards = document.querySelectorAll('.card');
+* {
+    box-sizing: border-box;
+}
 
-cards.forEach(card => {
-  const progressBar = card.querySelector('.progress-bar');
-  const progressInfo = card.querySelector('.info span:first-child');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-  const days = parseInt(progressInfo.innerText.split(' ')[0]);
-  const hours = parseInt(progressInfo.innerText.split(' ')[2]);
-  const minutes = parseInt(progressInfo.innerText.split(' ')[4]);
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
 
-  const totalSeconds = (days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60);
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
 
-  const updateProgressBar = () => {
-    const now = new Date();
-    const then = new Date(now.getFullYear(), 0, 1);
-    const secondsElapsed = Math.floor((now - then) / 1000);
-    const percentageComplete = (secondsElapsed / totalSeconds) * 100;
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    overflow: hidden;
+    width: 300px;
+}
 
-    progressBar.style.width = `${percentageComplete}%`;
+.card-header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+}
 
-    if (percentageComplete === 100) {
-      clearInterval(intervalId);
-    }
-  };
+.card-header h2 {
+    margin: 0;
+}
 
-  let intervalId = setInterval(updateProgressBar, 1000);
-});
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 20px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
